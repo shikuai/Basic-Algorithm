@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>匹配字符串的结尾</title>
+</head>
+<body>
+<script type="text/javascript">
+	function confirmEnding(str, target) {
+		console.log(str.substring(str.length-target.length));
+		console.log(str.substring(str.length - target.length) == target);
+
+	}
+
+	confirmEnding("Bastian", "n");
+	confirmEnding("Connor", "n");
+	confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")
+</script>
+</body>
+</html>
