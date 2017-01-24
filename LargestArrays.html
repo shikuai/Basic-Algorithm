@@ -9,26 +9,13 @@
 	function largestOfFour(arr) {
 		var arr2=[];
 		for (var i in arr) {
-			arr2.push(Math.max.apply(this,arr[i]));
+			arr2.push(Math.max.apply(Math,arr[i]));
 
 			/*
 
+				apply  改变函数的this作用域，第一个参数为要改变的对象，一下事原文详解
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			 http://www.jianshu.com/p/74ae6ddb6e49
 
 			* */
 		}
