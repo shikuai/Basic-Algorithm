@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>PartitionArray</title>
+</head>
+<body>
+<p>
+	把一个数组arr按照指定的数组大小size分割成若干个数组块。
+
+	例如:chunk([1,2,3,4],2)=[[1,2],[3,4]];
+
+	chunk([1,2,3,4,5],2)=[[1,2],[3,4],[5]];
+</p>
+<script>
+	function chunk(arr, size) {
+		// Break it up.
+		/*
+		var newArr = [],forLen = Math.ceil(arr.length/size);
+		for (var i = 0; i < forLen; i++) {
+			var arr2 = [];
+			size = i==forLen-1?arr.length:size;
+			for (var j = 0; j <size ; j++) {
+				arr2.push(arr.shift());
+			}
+			newArr.push(arr2);
+		}
+		console.log(JSON.stringify(newArr));
+*/
+		var newArr = [],forLen = Math.ceil(arr.length/size);
+		for (var i = 0; i < forLen; i++) {
+			var num = i*size;
+			newArr.push(arr.slice(num,num+size));
+		}
+
+
+
+
+
+		console.log(JSON.stringify(newArr));
+		//return arr;
+	}
+
+	chunk(["a", "b", "c", "d"], 2);
+	chunk([0, 1, 2, 3, 4, 5], 2);
+	chunk([0, 1, 2, 3, 4, 5], 3)
+</script>
+</body>
+</html>
