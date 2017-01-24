@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>重复字符串</title>
+</head>
+<body>
+<p>
+	重要的事情说3遍！
+
+	重复一个指定的字符串 num次，如果num是一个负数则返回一个空字符串。
+</p>
+<script>
+	function repeat(str, num) {
+		// repeat after me
+		var str1 = '';
+		if(num>0){
+			for (var i = 0; i < num; i++) {
+				str1+=str;
+			}
+			return str1;
+		}
+		return str1;
+	}
+
+	repeat("abc", 3);
+
+</script>
+</body>
+</html>
