@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SlasherArray</title>
+</head>
+<body>
+<p>
+	返回一个数组被截断n个元素后还剩余的元素，截断从索引0开始。
+</p>
+<script>
+	function slasher(arr, howMany) {
+		// it doesn't always pay to be first
+		// sb  没意思
+		arr.splice(0,howMany);
+
+//		console.log(JSON.stringify(arr.slice(howMany)));
+		console.log(JSON.stringify(arr));
+
+		//return arr.slice(howMany-1);
+	}
+
+	slasher([1, 2, 3], 2);
+	slasher([1, 2, 3], 0);
+	slasher([1, 2, 3], 9);
+	slasher([1, 2, 3], 4);
+	slasher(["burgers", "fries", "shake"], 1);
+	slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5);
+	/*
+	 slasher([1, 2, 3], 2) 应该返回 [3].
+	 slasher([1, 2, 3], 0) 应该返回 [1, 2, 3].
+	 slasher([1, 2, 3], 9) 应该返回 [].
+	 slasher([1, 2, 3], 4) 应该返回 [].
+	 slasher(["burgers", "fries", "shake"], 1) 应该返回 ["fries", "shake"].
+	 slasher([1, 2, "chicken", 3, "potatoes", "cheese", 4], 5) 应该返回 ["cheese", 4].
+	 */
+
+</script>
+</body>
+</html>
