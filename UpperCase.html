@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>大慈首字母大写</title>
+</head>
+<body>
+<p>
+	确保字符串的每个单词首字母都大写，其余部分小写。
+
+	像'the'和'of'这样的连接符同理。
+</p>
+<script type="text/javascript">
+	function findLongestWord(str) {
+		// 正则方法
+		 console.log(str.replace(/\b[A-Za-z']+\b/g, function (w) {
+			 var ss= w.toLowerCase();
+			 return ss.substring(0, 1).toUpperCase() + ss.substring(1);
+		 }));
+		/* //数组方法
+		 var arr = str.split(' ');
+		 for (var i in arr) {
+		 var yy= arr[i].toLowerCase();
+		 arr[i] = yy.substring(0,1).toUpperCase() + yy.substring(1)
+		 }
+		 console.log(arr.join(' '));
+		 */
+
+	}
+
+	findLongestWord("The quick brown fox jumped over the lazy dog");
+	findLongestWord("I'm a little tea pot");
+	findLongestWord("sHoRt AnD sToUt");
+</script>
+</body>
+</html>
