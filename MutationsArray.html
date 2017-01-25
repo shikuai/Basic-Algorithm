@@ -16,9 +16,16 @@
 </p>
 <script>
 	function mutation(arr) {
+		/*
 		for (var j in arr) {
 			arr[j] = arr[j].toLowerCase();
 		}
+		*/
+		//es5 数组方法
+		arr = arr.map(function (val) {
+			return val.toLowerCase();
+		});
+		console.log(arr);
 		for (var i = 0; i < arr[1].length; i++) {
 			if(arr[0].indexOf(arr[1][i])<0)return false;
 		}
@@ -28,6 +35,11 @@
 	console.log(mutation(["hello", "hey"]));
 	console.log(mutation(["hello", "Hello"]));
 	console.log(mutation(["Mary", "Army"]));
+	a = [1, 2, 3];
+	b= a.map(function(value){
+		return value*value;
+	});
+	console.log(b); //b是[1, 4, 9]
 	/*
 	 mutation(["hello", "hey"]) 应该返回 false.
 	 mutation(["hello", "Hello"]) 应该返回 true.
