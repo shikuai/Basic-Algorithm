@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>FilterArray</title>
+</head>
+<body>
+<p>
+	删除数组中的所有假值。
+
+	在JavaScript中，假值有false、null、0、""、undefined 和 NaN。
+</p>
+<script>
+	function bouncer(arr) {
+		var arr1 = [];
+		for (var i = 0; i < arr.length; i++) {
+			if(Boolean(arr[i])){
+				arr1.push(arr[i]);
+			}
+		}
+		return arr1;
+
+/*
+		return arr.filter(function (val) {
+			return Boolean(val);
+		});
+		*/
+		/*
+
+
+		 filter()方法返回的数组元素是调用的数组的一个子集。
+		 传递的函数是用逻辑来判定的：该函数返回true或false。
+		 如果返回的值是true或能够转化为true的值，则将元素加入返回子集。
+		 a = [1, 2, 3, 4, 5];
+		 b = a.filter(function(value){
+		 return value > 3;
+		 })
+		 //b:[4, 5]
+		  */
+	}
+
+	bouncer([7, "ate", "", false, 9]);
+
+	/*
+	 bouncer([7, "ate", "", false, 9]) 应该返回 [7, "ate", 9].
+	 bouncer(["a", "b", "c"]) 应该返回 ["a", "b", "c"].
+	 bouncer([false, null, 0, NaN, undefined, ""]) 应该返回 [].
+	 bouncer([1, null, NaN, 2, undefined]) 应该返回 [1, 2].
+	 */
+
+</script>
+</body>
+</html>
