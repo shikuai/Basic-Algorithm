@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>FilterArray</title>
+</head>
+<body>
+<p>
+	实现一个摧毁(destroyer)函数，第一个参数是待摧毁的数组，其余的参数是待摧毁的值。
+</p>
+<script>
+	function destroyer() {
+/*
+
+		var arr = arguments[0];
+
+		for (var i = 1; i < arguments.length; i++) {
+			var dd = arguments[i];
+			arr = arr.filter(function (val) {
+				console.log(arguments);
+				return val!==dd;
+			})
+		}
+		console.log(arr);
+
+*/
+		var arr = Array.from(arguments);
+		console.log(arr.shift().filter(function (val) {
+			console.log(arguments);
+			return arr.indexOf(val)==-1;
+		}));
+
+		/*
+		 filter()  内部函数三个参数第一个为每次调用的是数组元素，第二个为调用的索引，第三个为原数组
+		 indexOf() 检查一个数组中是否包含指定的元素；
+		  */
+	}
+
+	destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+	destroyer([3, 5, 1, 2, 2], 2, 3, 5);
+
+	/*
+	 destroyer([1, 2, 3, 1, 2, 3], 2, 3) 应该返回 [1, 1].
+	 destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) 应该返回 [1, 5, 1].
+	 destroyer([3, 5, 1, 2, 2], 2, 3, 5) 应该返回 [1].
+	 destroyer([2, 3, 2, 3], 2, 3) 应该返回 [].
+	 destroyer(["tree", "hamburger", 53], "tree", 53) 应该返回 ["hamburger"].
+
+	 */
+
+</script>
+</body>
+</html>
